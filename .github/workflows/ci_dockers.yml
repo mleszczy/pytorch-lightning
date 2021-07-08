@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python_version: [3.7]
+        python_version: [3.8]
         pytorch_version: [1.4, 1.8]
     steps:
       - name: Checkout
