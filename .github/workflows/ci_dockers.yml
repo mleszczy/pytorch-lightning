@@ -23,8 +23,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python_version: [3.8]
-        pytorch_version: [1.4, 1.8]
+        python_version: ["3.8"]
+        pytorch_version: ["1.6", "1.8"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -45,8 +45,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python_version: [3.7]
-        xla_version: [1.6, 1.8, "nightly"]
+        python_version: ["3.7"]
+        xla_version: ["1.6", "1.8", "nightly"]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -62,19 +62,19 @@ jobs:
           push: false
         timeout-minutes: 50
 
-  build-cuda:
+  build-CUDA:
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
         include:
           # todo: see notes in Dockerfile
-          - python_version: 3.6
-            pytorch_version: 1.5
-          - python_version: 3.7
-            pytorch_version: 1.6
-          - python_version: 3.9
-            pytorch_version: 1.9
+          - python_version: "3.6"
+            pytorch_version: "1.5"
+          - python_version: "3.7"
+            pytorch_version: "1.6"
+          - python_version: "3.9"
+            pytorch_version: "1.9"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -97,20 +97,20 @@ jobs:
           push: false
         timeout-minutes: 50
 
-  build-conda:
+  build-Conda:
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
         include:
-          - python_version: 3.6
-            pytorch_version: 1.5
-          - python_version: 3.7
-            pytorch_version: 1.6
-          - python_version: 3.8
-            pytorch_version: 1.9
-          - python_version: 3.9
-            pytorch_version: 1.10
+          - python_version: "3.6"
+            pytorch_version: "1.5"
+          - python_version: "3.7"
+            pytorch_version: "1.6"
+          - python_version: "3.8"
+            pytorch_version: "1.9"
+          - python_version: "3.9"
+            pytorch_version: "1.10"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -154,8 +154,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - python_version: 3.8
-            pytorch_version: 1.7
+          - python_version: "3.8"
+            pytorch_version: "1.7"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
